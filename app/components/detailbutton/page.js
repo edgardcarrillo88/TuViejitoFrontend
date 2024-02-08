@@ -16,20 +16,23 @@ export default function DetailButton({ items }) {
     };
 
     return (
-        <div className={styles.main}>
-            {items.map((item, index) => (
-                <p
-                    key={index}
-                    className={styles.button}
-                    style={{
-                        border: index === selectedOption ? "1px solid rgb(37, 99, 235)" : "1px solid rgba(197, 192, 192, 0.705)"
-                    }}
-                    onClick={() => handleClick(index)}
-                >
-                    {item.detail}
-                </p>
-            ))}
-        </div>
+        // <div className={styles.main}>
+        //     {items.map((item, index) => (
+        //         <p
+        //             key={index}
+        //             className={styles.button}
+        //             style={{
+        //                 border: index === selectedOption ? "1px solid rgb(37, 99, 235)" : "1px solid rgba(197, 192, 192, 0.705)"
+        //             }}
+        //             onClick={() => handleClick(index)}
+        //         >
+        //             {item.detail}
+        //         </p>
+        //     ))}
+        // </div>
+        <>
+        <h1>Hola</h1>
+        </>
     );
 }
 
