@@ -21,9 +21,9 @@ export default function RootLayout({ children }) {
       <body>
         <div className={styles.main}>
           <Statecart>
-            <Navbar />
             <Shoppingcart/>
             <Providers>
+            <Navbar />
             <main >{children}</main>
             </Providers>
             <Footer />

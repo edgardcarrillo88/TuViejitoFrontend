@@ -126,7 +126,7 @@ export default function Home() {
     <>
       <div className={styles.main}>
         <div className={styles.form}>
-          <p>Hola Edgard!</p>
+          <p>Hola: {options.Usuario} </p>
           <div className={styles.container}>
             <p>Esta es tu dirección:</p>
             <input name="Direccion" onChange={HandleChange}></input>

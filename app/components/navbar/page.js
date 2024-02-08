@@ -1,21 +1,14 @@
 'use client'
 import Link from "next/link";
 import styles from './page.module.css'
-import { useAppContext } from '../statecart/page'
-
+import { signIn, useSession, signOut } from 'next-auth/react'
 
 export default function page(params) {
 
-    const options = useAppContext()
+    const { data: session } = useSession()
+
     const logo = '/Imagen1.png'
 
-    function handleOpenCart() {
-        if (options.isOpen === true) {
-            options.CloseCart()
-        } else {
-            options.openCart()
-        }
-    }
 
     return (
         <>
@@ -33,9 +26,18 @@ export default function page(params) {
                     <div>&#128269;</div>
                     <input placeholder="busca tu viejito" />
                 </div>
-                <div className={styles.login}>
-                    <Link className={styles.linkoption} href="/login">Login</Link>
-                </div>
+                {session?.user ? (
+                    <div className={styles.logoutoption}>
+                        <Link className={styles.linkoption} href="/login" onClick={() => signOut()}>
+                            <img src={session.user.image} />
+                        </Link>
+                    </div>
+                ) : (
+                    <div className={styles.loginoption}>
+                        <Link className={styles.linkoption} href="/login">Login</Link>
+                    </div>
+                )
+                }
             </div>
         </>
     )
