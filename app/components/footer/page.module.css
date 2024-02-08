@@ -1,0 +1,57 @@
+.main {
+  margin-top: 10px;
+  border-top: 1px solid rgb(233, 233, 233);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 100%;
+  height: 200px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  list-style: none;
+  font-family: sans-serif;
+  gap: 10px;
+
+  height: 30px;
+  width: 300px;
+}
+
+.linkoption {
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+/* Estilos específicos para pantallas de celular */
+@media screen and (max-width: 600px) {
+  .logo {
+    height: 55px;
+    width: 50px;
+  }
+
+  .fotterRigth {
+    display: none;
+  }
+}
+
+/* Estilos específicos para pantallas de laptop */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .logo {
+    height: 70px;
+    width: 65px;
+  }
+}
+
+/* Estilos específicos para pantallas wide */
+@media screen and (min-width: 1025px) {
+  .logo {
+    height: 110px;
+    width: 100px;
+  }
+}

@@ -1,0 +1,99 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  background-color: rgb(233, 230, 230);
+
+  width: 100%;
+  height: 70px;
+  top: 0;
+  left: 0;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  font-family: sans-serif;
+  height: 30px;
+  width: 500px;
+}
+
+.searchbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 500px;
+}
+
+.searchbar input {
+  width: 450px;
+  height: 30px;
+  border-radius: 20px;
+  padding-left: 10px;
+  border: 1px solid rgb(206, 200, 200);
+}
+
+.linkoption {
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+
+
+/* Estilos específicos para pantallas de celular */
+@media screen and (max-width: 600px) {
+
+  .logo{
+    margin-left: 10px;
+  }
+  .options {
+    display: none;
+  }
+
+  .searchbar {
+    display: none;
+  }
+
+  .login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 10px;
+  }
+}
+
+/* Estilos específicos para pantallas de laptop */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+
+  .logo{
+    display: none;
+  }
+
+
+}
+
+/* Estilos específicos para pantallas wide */
+@media screen and (min-width: 1025px) {
+
+  .logo{
+    display: none;
+  }
+
+
+  .login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 200px;
+  }
+  
+}

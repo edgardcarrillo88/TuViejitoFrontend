@@ -1,0 +1,30 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 500px;
+  top: 0;
+  right: 0;
+  position: fixed;
+  z-index: 9999;
+  background-color: white;
+  border: 1px solid red;
+}
+
+.main button {
+  border-radius: 50%;
+  border: 0px;
+  background-color: rgb(236, 232, 226);
+  height: 50px;
+  width: 50px;
+}
+
+.products{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-left: 10px;
+  border: 1px solid red;
+}
