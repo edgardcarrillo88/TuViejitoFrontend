@@ -88,6 +88,8 @@ export default function Home() {
 
   const handleSubmit = async (cuidador) => {
 
+    console.log(cuidador);
+
     setOptions({
       ...options,
       Cuidador: cuidador,
