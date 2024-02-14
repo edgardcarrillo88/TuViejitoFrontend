@@ -13,13 +13,16 @@ export default function page(params) {
     const [visible, setVisible] = useState("none")
 
     useEffect(() => {
-        if (session?.user?.email) { // Verificar si session.user.email tiene un valor
+        if (session?.user?.email) {
             async function fetchData() {
                 try {
                     const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/users/getsingleuser`, {
                         params: { email: session.user.email }
                     });
-                    setVisible("flex")
+                    console.log(response.data.Tipo);
+                    if (response.data.Tipo==="admin") {
+                        setVisible("flex")
+                    }
                 } catch (error) {
                     console.error('Error al obtener datos del usuario:', error);
                 }
