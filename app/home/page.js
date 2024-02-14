@@ -2,7 +2,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Videoplayer from "../components/videoplayer/page"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { signIn, useSession, signOut } from 'next-auth/react'
 import axios from "axios";
@@ -32,6 +32,20 @@ export default function Home() {
     { precio: 100, usuario: "usuario 6", name: "Jean Boris Espinoza Vicente", ubicacion: "San Martin de Porres", descripcionbreve: "Los entretengo contando chistes negros" },
     { precio: 120, usuario: "usuario 7", name: "Dayana Deisy Miranda Flores", ubicacion: "Santa Anita", descripcionbreve: "A veces trato mal a las personas, pero es por su bien" }
   ]
+
+
+  const [carer, setCarer] = useState([])
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/users/getusersfiltered`);
+      setCarer(response.data)
+      // console.log(response.data);
+    }
+    fetchData()
+  }, [])
+
+
 
   const router = useRouter()
 
@@ -144,11 +158,11 @@ export default function Home() {
           </div>
           <div className={styles.container}>
             <p>Fecha de atención</p>
-            <input type="datetime-local"  name="FechaHora" onChange={HandleChange}/>
+            <input type="datetime-local" name="FechaHora" onChange={HandleChange} />
           </div>
           <div className={styles.container}>
             <p>Horas requeridas</p>
-            <input type="number"  name="Tiempo" onChange={HandleChange}/>
+            <input type="number" name="Tiempo" onChange={HandleChange} />
           </div>
           <div className={styles.container}>
             <p>La persona tiene las siguientes limitantes:</p>
@@ -198,15 +212,15 @@ export default function Home() {
       <div className={styles.cuidadoresform}>
 
         {
-          usuarios.map((item) => (
-            <div className={styles.cuidadorescontainer} style={{ display: visible }} key={item.name}>
+          carer.map((item) => (
+            <div className={styles.cuidadorescontainer} style={{ display: visible }} key={item._id}>
               <div className={styles.maininformation}>
-                <p>{item.name}</p>
-                <p>{item.ubicacion}</p>
-                <p>S/{item.precio}</p>
+                <p>{item.Nombres} {item.Apellidos}</p>
+                <p>{item.Direccion}</p>
+                <p>S/{item.Precio}</p>
               </div>
               <div className={styles.description}>
-                <p>{item.descripcionbreve}</p>
+                <p>{item.Comentario}</p>
                 <button className={styles.button} onClick={() => handleSubmit(item.usuario)} >Solicitar</button>
               </div>
             </div>
