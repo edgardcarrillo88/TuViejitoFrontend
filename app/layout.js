@@ -25,8 +25,8 @@ export default function RootLayout({ children }) {
             <Providers>
             <Navbar />
             <main >{children}</main>
-            </Providers>
             <Footer />
+            </Providers>
           </Statecart>
         </div>
       </body>

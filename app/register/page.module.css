@@ -73,6 +73,7 @@
     width: 100%;
     border-radius:10px;
     height: 100px;
+    resize: none;
   }
 }
 
@@ -117,5 +118,12 @@
     height: 20px;
     border: 1px solid gray;
     border-radius: 10px;
+  }
+
+  .container textarea {
+    width: 400px;
+    border-radius:10px;
+    height: 100px;
+    resize: none;
   }
 }

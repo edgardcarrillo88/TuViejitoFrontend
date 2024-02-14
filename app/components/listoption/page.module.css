@@ -1,0 +1,21 @@
+.linkoption {
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+/* Estilos específicos para pantallas de celular */
+@media screen and (max-width: 600px) {
+
+
+}
+
+/* Estilos específicos para pantallas de laptop */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+
+}
+
+/* Estilos específicos para pantallas wide */
+@media screen and (min-width: 1025px) {
+
+  
+}

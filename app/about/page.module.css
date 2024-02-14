@@ -1,43 +1,104 @@
-.main{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+
+
+/* Estilos específicos para pantallas de celular */
+@media screen and (max-width: 600px) {
+
+  .main{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 10px;
+    margin-top: 70px;
+    gap: 10px;
+    width: 100vw;
+  }
   
-  padding: 10px;
-  margin-top: 70px;
-  gap: 10px;
-  width: 100vw;
+  .container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+    height: 250px;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  .description{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: small;
+    width: 30%;
+    height: 100%;
+  }
+  
+  
+  .image{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+  }
+  
+  .image img{
+    width: 100%;
+  }
+ 
+  
 }
-
-.container{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  height: 250px;
-  width: 100%;
-  gap: 10px;
+/* Estilos específicos para pantallas de laptop */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  
 }
+/* Estilos específicos para pantallas wide */
+@media screen and (min-width: 1025px) {
 
-.description{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-size: small;
-  width: 30%;
-  height: 100%;
-}
+  
+  .main{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 10px;
+    margin-top: 70px;
+    gap: 10px;
+    width: 80vw;
+  }
+  
+  .container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+    height: 400px;
+    width: 100%;
+    gap: 10px;
+  }
 
+  .description{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: x-large;
+    width: 40%;
+    height: 100%;
+  }
 
-.image{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 70%;
-  height: 100%;
-}
+  .image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+  }
 
-.image img{
-  width: 100%;
+  .image img{
+    height: 100%;
+  }
+ 
+ 
 }

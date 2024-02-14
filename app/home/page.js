@@ -13,7 +13,8 @@ export default function Home() {
 
   const { data: session } = useSession()
   // console.log(session);
-  // console.log(session.user.email);
+  // console.log(session?.user?.name);
+  // console.log(session?.user?.email );
 
   const videos = [
     'https://player.vimeo.com/external/469843585.sd.mp4?s=a6d38defb63ef4dee15f09abf704d8f090db9343&profile_id=164&oauth2_token_id=57447761',
@@ -128,7 +129,7 @@ export default function Home() {
     <>
       <div className={styles.main}>
         <div className={styles.form}>
-          <p>Hola: {options.Usuario} </p>
+          <p>Hola: {session?.user?.name} </p>
           <div className={styles.container}>
             <p>Esta es tu dirección:</p>
             <input name="Direccion" onChange={HandleChange}></input>
